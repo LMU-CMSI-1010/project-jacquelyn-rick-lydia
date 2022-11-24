@@ -116,13 +116,12 @@ BoxRow.secondrow()
 BoxRow.thirdrow()
 BoxRow.fourthrow()
 BoxRow.fifthrow()
-BoxRow.turn_dark_gray(r1b3)
 pygame.display.update()
 
 
 
-girl = ''
-boy = 0
+winner = ''
+counter = 0
 
 print(word)
 
@@ -138,9 +137,9 @@ while playing:
 def play_game():
     user_word = input('what is your guess? ')
     if user_word == word:
-        global girl
-        girl = 'You won! '
-        print(girl)
+        global winner
+        winner = 'You won! '
+        print(winner)
     elif len(user_word) != 5 or type(user_word) != str:
         print('guess must be a five letter word')
     elif user_word not in five_list:
@@ -187,11 +186,11 @@ def play_game():
             print('fifth box turns dark gray')
 
 
-while boy != 5:
-    boy += 1
+while counter != 5:
+    counter += 1
     play_game()
-    if girl == 'You won! ':
-        boy = 5
+    if winner == 'You won! ':
+        counter = 5
 
 
 # quits the game if the user gets the word right and prints you won message
