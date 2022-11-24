@@ -10,9 +10,13 @@ red = (200, 0, 0)
 white = (255, 255, 255)
 black = (0, 0, 0)
 light_gray = (200, 200, 200)
+yellow = (255, 235, 0)
+dark_gray = (135, 135, 135)
+
 
 screen_width = 500
 screen_height = 500
+
 
 box_width = screen_width / 10
 box_height = screen_height / 10
@@ -46,10 +50,9 @@ for item in english_words_lower_alpha_set:
 
 # Picks a word from the random list of english words 
 
-
-
-
-# displays rows of boxes to the screen
+r1b3 = pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2), box_width, box_height)
+r1b2 = pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2), box_width, box_height), 3)
+# displays rows of boxes to the screen:
 
 
 class BoxRow():
@@ -60,8 +63,8 @@ class BoxRow():
         self.amount = amount
 
     def firstrow():
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2), box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2), box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, r1b3, 3)
+        pygame.draw.rect(screen, light_gray, r1b2, 3)
         pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2), box_width, box_height), 3)
         pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2), box_width, box_height), 3)
         pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2), box_width, box_height), 3)
@@ -83,13 +86,37 @@ class BoxRow():
         pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + 150, box_width, box_height), 3)
         pygame.display.update()
 
+    def fourthrow():
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + 225, box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + 225, box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + 225, box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + 225, box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + 225, box_width, box_height), 3)
+        pygame.display.update()
 
+    def fifthrow():
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + 300, box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + 300, box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + 300, box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + 300, box_width, box_height), 3)
+        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + 300, box_width, box_height), 3)
+        pygame.display.update()
 
+    def turn_green(box):
+        pygame.draw.rect(screen, green, box, 0)
 
+    def turn_yellow(box):
+        pygame.draw.rect(screen, yellow, box, 0)
+
+    def turn_dark_gray(box):
+        pygame.draw.rect(screen, dark_gray, box, 0)
 
 BoxRow.firstrow()
 BoxRow.secondrow()
 BoxRow.thirdrow()
+BoxRow.fourthrow()
+BoxRow.fifthrow()
+BoxRow.turn_dark_gray(r1b3)
 pygame.display.update()
 
 
