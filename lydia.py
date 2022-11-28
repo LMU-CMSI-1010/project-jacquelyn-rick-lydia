@@ -1,6 +1,4 @@
 import pygame
-import english_words
-import time
 
 pygame.init()
 
@@ -406,7 +404,6 @@ def play_game():
                 BoxRow.turn_yellow(r5b5)
 
 
-
 # incorrect letter
 
             if user_word[0] not in word:
@@ -421,7 +418,6 @@ def play_game():
                 BoxRow.turn_dark_gray(r5b5)
 
             pygame.display.update()
-
 
 
 playing = True
