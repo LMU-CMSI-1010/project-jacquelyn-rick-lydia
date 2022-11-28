@@ -159,9 +159,7 @@ user_word = ''
 
 def play_game():
     user_word = input('what is your guess? ')
-    if user_word == word:
-        print('You won! ')
-    elif len(user_word) != 5 or type(user_word) != str:
+    if len(user_word) != 5 or type(user_word) != str:
         print('guess must be a five letter word')
     elif user_word not in five_list:
         print('invalid word')
@@ -179,6 +177,13 @@ def play_game():
             if user_word[3] == word[3]:
                 BoxRow.turn_green(r1b4)
             if user_word[4] == word[4]:
+                BoxRow.turn_green(r1b5)
+            if user_word == word:
+                print('You won! ')
+                BoxRow.turn_green(r1b1)
+                BoxRow.turn_green(r1b2)
+                BoxRow.turn_green(r1b3)
+                BoxRow.turn_green(r1b4)
                 BoxRow.turn_green(r1b5)
 
 
@@ -222,6 +227,13 @@ def play_game():
             if user_word[3] == word[3]:
                 BoxRow.turn_green(r2b4)
             if user_word[4] == word[4]:
+                BoxRow.turn_green(r2b5)
+            if user_word == word:
+                print('You won! ')
+                BoxRow.turn_green(r2b1)
+                BoxRow.turn_green(r2b2)
+                BoxRow.turn_green(r2b3)
+                BoxRow.turn_green(r2b4)
                 BoxRow.turn_green(r2b5)
  
 
@@ -268,6 +280,13 @@ def play_game():
                 BoxRow.turn_green(r3b4)
             if user_word[4] == word[4]:
                 BoxRow.turn_green(r3b5)
+            if user_word == word:
+                print('You won! ')
+                BoxRow.turn_green(r3b1)
+                BoxRow.turn_green(r3b2)
+                BoxRow.turn_green(r3b3)
+                BoxRow.turn_green(r3b4)
+                BoxRow.turn_green(r3b5)
         
 
 # correct letter but wrong place
@@ -312,6 +331,13 @@ def play_game():
             if user_word[3] == word[3]:
                 BoxRow.turn_green(r4b4)
             if user_word[4] == word[4]:
+                BoxRow.turn_green(r4b5)
+            if user_word == word:
+                print('You won! ')
+                BoxRow.turn_green(r4b1)
+                BoxRow.turn_green(r4b2)
+                BoxRow.turn_green(r4b3)
+                BoxRow.turn_green(r4b4)
                 BoxRow.turn_green(r4b5)
 
 
@@ -358,6 +384,13 @@ def play_game():
                 BoxRow.turn_green(r5b4)
             if user_word[4] == word[4]:
                 BoxRow.turn_green(r5b5)
+            if user_word == word:
+                print('You won! ')
+                BoxRow.turn_green(r5b1)
+                BoxRow.turn_green(r5b2)
+                BoxRow.turn_green(r5b3)
+                BoxRow.turn_green(r5b4)
+                BoxRow.turn_green(r5b5)
 
 
 # correct letter but wrong place
@@ -395,14 +428,14 @@ def play_game():
 playing = True
 while playing:
         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                playing = False
             while counter != 5:
                 counter += 1
                 print(counter)
                 play_game()
                 if user_word == word:
                     counter = 5
-            if event.type == pygame.QUIT:
-                playing = False
 
 pygame.display.update()
 
