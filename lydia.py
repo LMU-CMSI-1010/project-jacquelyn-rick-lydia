@@ -36,7 +36,7 @@ screen.blit(text, text_rect)
 
 # Centers the text and puts it onto the screen
 
-pygame.display.update()
+
 
 
 from english_words import english_words_lower_alpha_set
@@ -51,7 +51,7 @@ for item in english_words_lower_alpha_set:
 # Picks a word from the random list of english words 
 
 r1b3 = pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2), box_width, box_height)
-r1b2 = pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2), box_width, box_height), 3)
+r1b2 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2), box_width, box_height)
 r1b1 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2), box_width, box_height)
 r1b4 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2), box_width, box_height)
 r1b5 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2), box_width, box_height)
@@ -131,23 +131,21 @@ class BoxRow():
 
     def turn_green(box):
         pygame.draw.rect(screen, green, box, 0)
+        pygame.display.update()
 
     def turn_yellow(box):
         pygame.draw.rect(screen, yellow, box, 0)
+        pygame.display.update()
 
     def turn_dark_gray(box):
         pygame.draw.rect(screen, dark_gray, box, 0)
+        pygame.display.update()
 
 BoxRow.firstrow()
-pygame.display.update()
 BoxRow.secondrow()
-pygame.display.update()
 BoxRow.thirdrow()
-pygame.display.update()
 BoxRow.fourthrow()
-pygame.display.update()
 BoxRow.fifthrow()
-pygame.display.update()
 
 
 
@@ -174,61 +172,42 @@ def play_game():
 
             if user_word[0] == word[0]:
                 BoxRow.turn_green(r1b1)
-                pygame.display.update()
             if user_word[1] == word[1]:
                 BoxRow.turn_green(r1b2)
-                pygame.display.update()
             if user_word[2] == word[2]:
                 BoxRow.turn_green(r1b3)
-                pygame.display.update()
             if user_word[3] == word[3]:
                 BoxRow.turn_green(r1b4)
-                pygame.display.update()
             if user_word[4] == word[4]:
                 BoxRow.turn_green(r1b5)
-                pygame.display.update()
 
-            pygame.display.update()
 
 # correct letter but wrong place
 
-            if user_word[0] != word[0] and (user_word[0] == word[1] or user_word[0] == word[2] or user_word[0] == word[3] or user_word[0] == word[4]):
+            if user_word[0] != word[0] and user_word[0] in word:
                 BoxRow.turn_yellow(r1b1)
-                pygame.display.update()
-            if user_word[1] != word[1] and (user_word[1] == word[0] or user_word[1] == word[2] or user_word[1] == word[3] or user_word[1] == word[4]):
+            if user_word[1] != word[1] and user_word[1] in word:
                 BoxRow.turn_yellow(r1b2)
-                pygame.display.update()
-            if user_word[2] != word[2] and (user_word[2] == word[0] or user_word[2] == word[1] or user_word[2] == word[3] or user_word[2] == word[4]):
+            if user_word[2] != word[2] and user_word[2] in word:
                 BoxRow.turn_yellow(r1b3)
-                pygame.display.update()
-            if user_word[3] != word[3] and (user_word[3] == word[0] or user_word[3] == word[1] or user_word[3] == word[2] or user_word[3] == word[4]):
+            if user_word[3] != word[3] and user_word[3] in word:
                 BoxRow.turn_yellow(r1b4)
-                pygame.display.update()
-            if user_word[4] != word[4] and (user_word[4] == word[0] or user_word[4] == word[1] or user_word[4] == word[2] or user_word[4] == word[3]):
+            if user_word[4] != word[4] and user_word[4] in word:
                 BoxRow.turn_yellow(r1b5)
-                pygame.display.update()
-
-            pygame.display.update()
 
 # incorrect letter
 
             if user_word[0] not in word:
                 BoxRow.turn_dark_gray(r1b1)
-                pygame.display.update()
             if user_word[1] not in word:
                 BoxRow.turn_dark_gray(r1b2)
-                pygame.display.update()
             if user_word[2] not in word:
                 BoxRow.turn_dark_gray(r1b3)
-                pygame.display.update()
             if user_word[3] not in word:
                 BoxRow.turn_dark_gray(r1b4)
-                pygame.display.update()
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r1b5)
-                pygame.display.update()
 
-            pygame.display.update()
         
         elif counter == 2:
 
@@ -236,60 +215,43 @@ def play_game():
 
             if user_word[0] == word[0]:
                 BoxRow.turn_green(r2b1)
-                pygame.display.update()
             if user_word[1] == word[1]:
                 BoxRow.turn_green(r2b2)
-                pygame.display.update()
             if user_word[2] == word[2]:
                 BoxRow.turn_green(r2b3)
-                pygame.display.update()
             if user_word[3] == word[3]:
                 BoxRow.turn_green(r2b4)
-                pygame.display.update()
             if user_word[4] == word[4]:
                 BoxRow.turn_green(r2b5)
-                pygame.display.update()
-            
-            pygame.display.update()
+ 
 
 # correct letter but wrong place
 
-            if user_word[0] != word[0] and (user_word[0] == word[1] or user_word[0] == word[2] or user_word[0] == word[3] or user_word[0] == word[4]):
+            if user_word[0] != word[0] and user_word[0] in word:
                 BoxRow.turn_yellow(r2b1)
-                pygame.display.update()
-            if user_word[1] != word[1] and (user_word[1] == word[0] or user_word[1] == word[2] or user_word[1] == word[3] or user_word[1] == word[4]):
+            if user_word[1] != word[1] and user_word[1] in word:
                 BoxRow.turn_yellow(r2b2)
-                pygame.display.update()
-            if user_word[2] != word[2] and (user_word[2] == word[0] or user_word[2] == word[1] or user_word[2] == word[3] or user_word[2] == word[4]):
+            if user_word[2] != word[2] and user_word[2] in word:
                 BoxRow.turn_yellow(r2b3)
-                pygame.display.update()
-            if user_word[3] != word[3] and (user_word[3] == word[0] or user_word[3] == word[1] or user_word[3] == word[2] or user_word[3] == word[4]):
+            if user_word[3] != word[3] and user_word[3] in word:
                 BoxRow.turn_yellow(r2b4)
-                pygame.display.update()
-            if user_word[4] != word[4] and (user_word[4] == word[0] or user_word[4] == word[1] or user_word[4] == word[2] or user_word[4] == word[3]):
+            if user_word[4] != word[4] and user_word[4] in word:
                 BoxRow.turn_yellow(r2b5)
-                pygame.display.update()
             
-            pygame.display.update()
 
 # incorrect letter
 
             if user_word[0] not in word:
                 BoxRow.turn_dark_gray(r2b1)
-                pygame.display.update()
             if user_word[1] not in word:
                 BoxRow.turn_dark_gray(r2b2)
-                pygame.display.update()
             if user_word[2] not in word:
                 BoxRow.turn_dark_gray(r2b3)
-                pygame.display.update()
             if user_word[3] not in word:
                 BoxRow.turn_dark_gray(r2b4)
-                pygame.display.update()
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r2b5)
-                pygame.display.update()
-            
+
             pygame.display.update()
 
         elif counter == 3:
@@ -298,59 +260,42 @@ def play_game():
 
             if user_word[0] == word[0]:
                 BoxRow.turn_green(r3b1)
-                pygame.display.update()
             if user_word[1] == word[1]:
                 BoxRow.turn_green(r3b2)
-                pygame.display.update()
             if user_word[2] == word[2]:
                 BoxRow.turn_green(r3b3)
-                pygame.display.update()
             if user_word[3] == word[3]:
                 BoxRow.turn_green(r3b4)
-                pygame.display.update()
             if user_word[4] == word[4]:
                 BoxRow.turn_green(r3b5)
-                pygame.display.update()
-            
-            pygame.display.update()
+        
 
 # correct letter but wrong place
 
-            if user_word[0] != word[0] and (user_word[0] == word[1] or user_word[0] == word[2] or user_word[0] == word[3] or user_word[0] == word[4]):
+            if user_word[0] != word[0] and user_word[0] in word:
                 BoxRow.turn_yellow(r3b1)
-                pygame.display.update()
-            if user_word[1] != word[1] and (user_word[1] == word[0] or user_word[1] == word[2] or user_word[1] == word[3] or user_word[1] == word[4]):
+            if user_word[1] != word[1] and user_word[1] in word:
                 BoxRow.turn_yellow(r3b2)
-                pygame.display.update()
-            if user_word[2] != word[2] and (user_word[2] == word[0] or user_word[2] == word[1] or user_word[2] == word[3] or user_word[2] == word[4]):
+            if user_word[2] != word[2] and user_word[2] in word:
                 BoxRow.turn_yellow(r3b3)
-                pygame.display.update()
-            if user_word[3] != word[3] and (user_word[3] == word[0] or user_word[3] == word[1] or user_word[3] == word[2] or user_word[3] == word[4]):
+            if user_word[3] != word[3] and user_word[3] in word:
                 BoxRow.turn_yellow(r3b4)
-                pygame.display.update()
-            if user_word[4] != word[4] and (user_word[4] == word[0] or user_word[4] == word[1] or user_word[4] == word[2] or user_word[4] == word[3]):
+            if user_word[4] != word[4] and user_word[4] in word:
                 BoxRow.turn_yellow(r3b5)
-                pygame.display.update()
             
-            pygame.display.update()
 
 # incorrect letter
 
             if user_word[0] not in word:
                 BoxRow.turn_dark_gray(r3b1)
-                pygame.display.update()
             if user_word[1] not in word:
                 BoxRow.turn_dark_gray(r3b2)
-                pygame.display.update()
             if user_word[2] not in word:
                 BoxRow.turn_dark_gray(r3b3)
-                pygame.display.update()
             if user_word[3] not in word:
                 BoxRow.turn_dark_gray(r3b4)
-                pygame.display.update()
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r3b5)
-                pygame.display.update()
 
             pygame.display.update()
 
@@ -360,59 +305,42 @@ def play_game():
 
             if user_word[0] == word[0]:
                 BoxRow.turn_green(r4b1)
-                pygame.display.update()
             if user_word[1] == word[1]:
                 BoxRow.turn_green(r4b2)
-                pygame.display.update()
             if user_word[2] == word[2]:
                 BoxRow.turn_green(r4b3)
-                pygame.display.update()
             if user_word[3] == word[3]:
                 BoxRow.turn_green(r4b4)
-                pygame.display.update()
             if user_word[4] == word[4]:
                 BoxRow.turn_green(r4b5)
-                pygame.display.update()
 
-            pygame.display.update()
 
 # correct letter but wrong place
 
-            if user_word[0] != word[0] and (user_word[0] == word[1] or user_word[0] == word[2] or user_word[0] == word[3] or user_word[0] == word[4]):
+            if user_word[0] != word[0] and user_word[0] in word:
                 BoxRow.turn_yellow(r4b1)
-                pygame.display.update()
-            if user_word[1] != word[1] and (user_word[1] == word[0] or user_word[1] == word[2] or user_word[1] == word[3] or user_word[1] == word[4]):
+            if user_word[1] != word[1] and user_word[1] in word:
                 BoxRow.turn_yellow(r4b2)
-                pygame.display.update()
-            if user_word[2] != word[2] and (user_word[2] == word[0] or user_word[2] == word[1] or user_word[2] == word[3] or user_word[2] == word[4]):
+            if user_word[2] != word[2] and user_word[2] in word:
                 BoxRow.turn_yellow(r4b3)
-                pygame.display.update()
-            if user_word[3] != word[3] and (user_word[3] == word[0] or user_word[3] == word[1] or user_word[3] == word[2] or user_word[3] == word[4]):
+            if user_word[3] != word[3] and user_word[3] in word:
                 BoxRow.turn_yellow(r4b4)
-                pygame.display.update()
-            if user_word[4] != word[4] and (user_word[4] == word[0] or user_word[4] == word[1] or user_word[4] == word[2] or user_word[4] == word[3]):
+            if user_word[4] != word[4] and user_word[4] in word:
                 BoxRow.turn_yellow(r4b5)
-                pygame.display.update()
             
-            pygame.display.update()
 
 # incorrect letter
 
             if user_word[0] not in word:
                 BoxRow.turn_dark_gray(r4b1)
-                pygame.display.update()
             if user_word[1] not in word:
                 BoxRow.turn_dark_gray(r4b2)
-                pygame.display.update()
             if user_word[2] not in word:
                 BoxRow.turn_dark_gray(r4b3)
-                pygame.display.update()
             if user_word[3] not in word:
                 BoxRow.turn_dark_gray(r4b4)
-                pygame.display.update()
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r4b5)
-                pygame.display.update()
 
             pygame.display.update()
 
@@ -422,59 +350,43 @@ def play_game():
 
             if user_word[0] == word[0]:
                 BoxRow.turn_green(r5b1)
-                pygame.display.update()
             if user_word[1] == word[1]:
                 BoxRow.turn_green(r5b2)
-                pygame.display.update()
             if user_word[2] == word[2]:
                 BoxRow.turn_green(r5b3)
-                pygame.display.update()
             if user_word[3] == word[3]:
                 BoxRow.turn_green(r5b4)
-                pygame.display.update()
             if user_word[4] == word[4]:
                 BoxRow.turn_green(r5b5)
-                pygame.display.update()
 
-            pygame.display.update()
 
 # correct letter but wrong place
 
-            if user_word[0] != word[0] and (user_word[0] == word[1] or user_word[0] == word[2] or user_word[0] == word[3] or user_word[0] == word[4]):
+            if user_word[0] != word[0] and user_word[0] in word:
                 BoxRow.turn_yellow(r5b1)
-                pygame.display.update()
-            if user_word[1] != word[1] and (user_word[1] == word[0] or user_word[1] == word[2] or user_word[1] == word[3] or user_word[1] == word[4]):
+            if user_word[1] != word[1] and user_word[1] in word:
                 BoxRow.turn_yellow(r5b2)
-                pygame.display.update()
-            if user_word[2] != word[2] and (user_word[2] == word[0] or user_word[2] == word[1] or user_word[2] == word[3] or user_word[2] == word[4]):
+            if user_word[2] != word[2] and user_word[2] in word:
                 BoxRow.turn_yellow(r5b3)
-                pygame.display.update()
-            if user_word[3] != word[3] and (user_word[3] == word[0] or user_word[3] == word[1] or user_word[3] == word[2] or user_word[3] == word[4]):
+            if user_word[3] != word[3] and user_word[3] in word:
                 BoxRow.turn_yellow(r5b4)
-                pygame.display.update()
-            if user_word[4] != word[4] and (user_word[4] == word[0] or user_word[4] == word[1] or user_word[4] == word[2] or user_word[4] == word[3]):
+            if user_word[4] != word[4] and user_word[4] in word:
                 BoxRow.turn_yellow(r5b5)
-                pygame.display.update()
 
-            pygame.display.update()
+
 
 # incorrect letter
 
             if user_word[0] not in word:
                 BoxRow.turn_dark_gray(r5b1)
-                pygame.display.update()
             if user_word[1] not in word:
                 BoxRow.turn_dark_gray(r5b2)
-                pygame.display.update()
             if user_word[2] not in word:
                 BoxRow.turn_dark_gray(r5b3)
-                pygame.display.update()
             if user_word[3] not in word:
                 BoxRow.turn_dark_gray(r5b4)
-                pygame.display.update()
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r5b5)
-                pygame.display.update()
 
             pygame.display.update()
 
@@ -483,18 +395,15 @@ def play_game():
 playing = True
 while playing:
         for event in pygame.event.get():
+            while counter != 5:
+                counter += 1
+                print(counter)
+                play_game()
+                if user_word == word:
+                    counter = 5
             if event.type == pygame.QUIT:
                 playing = False
 
-    
-while counter != 5:
-    counter += 1
-    print(counter)
-    play_game()
-    if user_word == word:
-        counter = 5
-
-pygame.display.update()
 pygame.display.update()
 
 # quits the game if the user gets the word right and prints you won message
