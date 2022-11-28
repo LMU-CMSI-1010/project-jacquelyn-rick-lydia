@@ -145,7 +145,6 @@ BoxRow.fourthrow()
 BoxRow.fifthrow()
 
 
-
 counter = 0
 
 print(word)
