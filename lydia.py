@@ -36,11 +36,6 @@ screen.blit(text, text_rect)
 
 # Centers the text and puts it onto the screen
 
-<<<<<<< HEAD
-pygame.display.update()
-=======
-
->>>>>>> lydia-branch
 
 
 from english_words import english_words_lower_alpha_set
@@ -55,11 +50,7 @@ for item in english_words_lower_alpha_set:
 # Picks a word from the random list of english words 
 
 r1b3 = pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2), box_width, box_height)
-<<<<<<< HEAD
-r1b2 = pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2), box_width, box_height), 3)
-=======
 r1b2 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2), box_width, box_height)
->>>>>>> lydia-branch
 r1b1 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2), box_width, box_height)
 r1b4 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2), box_width, box_height)
 r1b5 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2), box_width, box_height)
@@ -70,8 +61,6 @@ r2b1 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (scre
 r2b4 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + 75, box_width, box_height)
 r2b5 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + 75, box_width, box_height)
 
-<<<<<<< HEAD
-=======
 r3b3 = pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + 150, box_width, box_height)
 r3b2 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + 150, box_width, box_height)
 r3b1 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + 150, box_width, box_height)
@@ -89,7 +78,6 @@ r5b2 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (sc
 r5b1 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + 300, box_width, box_height)
 r5b4 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + 300, box_width, box_height)
 r5b5 = pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + 300, box_width, box_height)
->>>>>>> lydia-branch
 
 
 # displays rows of boxes to the screen:
@@ -117,29 +105,6 @@ class BoxRow():
         pygame.display.update()
 
     def thirdrow():
-<<<<<<< HEAD
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + 150, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + 150, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + 150, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + 150, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + 150, box_width, box_height), 3)
-        pygame.display.update()
-
-    def fourthrow():
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + 225, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + 225, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + 225, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + 225, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + 225, box_width, box_height), 3)
-        pygame.display.update()
-
-    def fifthrow():
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + 300, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + 300, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + 300, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + 300, box_width, box_height), 3)
-        pygame.draw.rect(screen, light_gray, pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + 300, box_width, box_height), 3)
-=======
         pygame.draw.rect(screen, light_gray, r3b3, 3)
         pygame.draw.rect(screen, light_gray, r3b2, 3)
         pygame.draw.rect(screen, light_gray, r3b1, 3)
@@ -161,19 +126,10 @@ class BoxRow():
         pygame.draw.rect(screen, light_gray, r5b1, 3)
         pygame.draw.rect(screen, light_gray, r5b4, 3)
         pygame.draw.rect(screen, light_gray, r5b5, 3)
->>>>>>> lydia-branch
         pygame.display.update()
 
     def turn_green(box):
         pygame.draw.rect(screen, green, box, 0)
-<<<<<<< HEAD
-
-    def turn_yellow(box):
-        pygame.draw.rect(screen, yellow, box, 0)
-
-    def turn_dark_gray(box):
-        pygame.draw.rect(screen, dark_gray, box, 0)
-=======
         pygame.display.update()
 
     def turn_yellow(box):
@@ -183,50 +139,19 @@ class BoxRow():
     def turn_dark_gray(box):
         pygame.draw.rect(screen, dark_gray, box, 0)
         pygame.display.update()
->>>>>>> lydia-branch
 
 BoxRow.firstrow()
 BoxRow.secondrow()
 BoxRow.thirdrow()
 BoxRow.fourthrow()
 BoxRow.fifthrow()
-<<<<<<< HEAD
-pygame.display.update()
 
 
 
-winner = ''
-=======
-
-
-
->>>>>>> lydia-branch
 counter = 0
 
 print(word)
 
-<<<<<<< HEAD
-
-playing = True
-while playing:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            playing = False
-
-# Loop that keeps the game open until the user quits
-
-
-
-
-
-def play_game():
-    user_word = input('what is your guess? ')
-    if user_word == word:
-        global winner
-        winner = 'You won! '
-        print(winner)
-    elif len(user_word) != 5 or type(user_word) != str:
-=======
 # Loop that keeps the game open until the user quits
 
 user_word = ''
@@ -234,54 +159,16 @@ user_word = ''
 def play_game():
     user_word = input('what is your guess? ')
     if len(user_word) != 5 or type(user_word) != str:
->>>>>>> lydia-branch
         print('guess must be a five letter word')
     elif user_word not in five_list:
         print('invalid word')
     else:
-<<<<<<< HEAD
-
-=======
->>>>>>> lydia-branch
         if counter == 1:
 
 # correct letter and placement
 
             if user_word[0] == word[0]:
                 BoxRow.turn_green(r1b1)
-<<<<<<< HEAD
-                pygame.display.update()
-            if user_word[1] == word[1]:
-                BoxRow.turn_green(r1b2)
-                pygame.display.update()
-            if user_word[2] == word[2]:
-                BoxRow.turn_green(r1b3)
-                pygame.display.update()
-            if user_word[3] == word[3]:
-                BoxRow.turn_green(r1b4)
-                pygame.display.update()
-            if user_word[4] == word[4]:
-                BoxRow.turn_green(r1b5)
-                pygame.display.update()
-
-# correct letter but wrong place
-
-            if user_word[0] != word[0] and (user_word[0] == word[1] or user_word[0] == word[2] or user_word[0] == word[3] or user_word[0] == word[4]):
-                BoxRow.turn_yellow(r1b1)
-                pygame.display.update()
-            if user_word[1] != word[1] and (user_word[1] == word[0] or user_word[1] == word[2] or user_word[1] == word[3] or user_word[1] == word[4]):
-                BoxRow.turn_yellow(r1b2)
-                pygame.display.update()
-            if user_word[2] != word[2] and (user_word[2] == word[0] or user_word[2] == word[1] or user_word[2] == word[3] or user_word[2] == word[4]):
-                BoxRow.turn_yellow(r1b3)
-                pygame.display.update()
-            if user_word[3] != word[3] and (user_word[3] == word[0] or user_word[3] == word[1] or user_word[3] == word[2] or user_word[3] == word[4]):
-                BoxRow.turn_yellow(r1b4)
-                pygame.display.update()
-            if user_word[4] != word[4] and (user_word[4] == word[0] or user_word[4] == word[1] or user_word[4] == word[2] or user_word[4] == word[3]):
-                BoxRow.turn_yellow(r1b5)
-                pygame.display.update()
-=======
             if user_word[1] == word[1]:
                 BoxRow.turn_green(r1b2)
             if user_word[2] == word[2]:
@@ -311,29 +198,11 @@ def play_game():
                 BoxRow.turn_yellow(r1b4)
             if user_word[4] != word[4] and user_word[4] in word:
                 BoxRow.turn_yellow(r1b5)
->>>>>>> lydia-branch
 
 # incorrect letter
 
             if user_word[0] not in word:
                 BoxRow.turn_dark_gray(r1b1)
-<<<<<<< HEAD
-                pygame.display.update()
-            if user_word[1] not in word:
-                BoxRow.turn_dark_gray(r1b2)
-                pygame.display.update()
-            if user_word[2] not in word:
-                BoxRow.turn_dark_gray(r1b3)
-                pygame.display.update()
-            if user_word[3] not in word:
-                BoxRow.turn_dark_gray(r1b4)
-                pygame.display.update()
-            if user_word[4] not in word:
-                BoxRow.turn_dark_gray(r1b5)
-                pygame.display.update()
-
-            pygame.display.update()
-=======
             if user_word[1] not in word:
                 BoxRow.turn_dark_gray(r1b2)
             if user_word[2] not in word:
@@ -343,7 +212,6 @@ def play_game():
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r1b5)
 
->>>>>>> lydia-branch
         
         elif counter == 2:
 
@@ -351,39 +219,6 @@ def play_game():
 
             if user_word[0] == word[0]:
                 BoxRow.turn_green(r2b1)
-<<<<<<< HEAD
-                pygame.display.update()
-            if user_word[1] == word[1]:
-                BoxRow.turn_green(r2b2)
-                pygame.display.update()
-            if user_word[2] == word[2]:
-                BoxRow.turn_green(r2b3)
-                pygame.display.update()
-            if user_word[3] == word[3]:
-                BoxRow.turn_green(r2b4)
-                pygame.display.update()
-            if user_word[4] == word[4]:
-                BoxRow.turn_green(r2b5)
-                pygame.display.update()
-
-# correct letter but wrong place
-
-            if user_word[0] != word[0] and (user_word[0] == word[1] or user_word[0] == word[2] or user_word[0] == word[3] or user_word[0] == word[4]):
-                BoxRow.turn_yellow(r2b1)
-                pygame.display.update()
-            if user_word[1] != word[1] and (user_word[1] == word[0] or user_word[1] == word[2] or user_word[1] == word[3] or user_word[1] == word[4]):
-                BoxRow.turn_yellow(r2b2)
-                pygame.display.update()
-            if user_word[2] != word[2] and (user_word[2] == word[0] or user_word[2] == word[1] or user_word[2] == word[3] or user_word[2] == word[4]):
-                BoxRow.turn_yellow(r2b3)
-                pygame.display.update()
-            if user_word[3] != word[3] and (user_word[3] == word[0] or user_word[3] == word[1] or user_word[3] == word[2] or user_word[3] == word[4]):
-                BoxRow.turn_yellow(r2b4)
-                pygame.display.update()
-            if user_word[4] != word[4] and (user_word[4] == word[0] or user_word[4] == word[1] or user_word[4] == word[2] or user_word[4] == word[3]):
-                BoxRow.turn_yellow(r2b5)
-                pygame.display.update()
-=======
             if user_word[1] == word[1]:
                 BoxRow.turn_green(r2b2)
             if user_word[2] == word[2]:
@@ -414,35 +249,11 @@ def play_game():
             if user_word[4] != word[4] and user_word[4] in word:
                 BoxRow.turn_yellow(r2b5)
             
->>>>>>> lydia-branch
 
 # incorrect letter
 
             if user_word[0] not in word:
                 BoxRow.turn_dark_gray(r2b1)
-<<<<<<< HEAD
-                pygame.display.update()
-            if user_word[1] not in word:
-                BoxRow.turn_dark_gray(r2b2)
-                pygame.display.update()
-            if user_word[2] not in word:
-                BoxRow.turn_dark_gray(r2b3)
-                pygame.display.update()
-            if user_word[3] not in word:
-                BoxRow.turn_dark_gray(r2b4)
-                pygame.display.update()
-            if user_word[4] not in word:
-                BoxRow.turn_dark_gray(r2b5)
-                pygame.display.update()
-    
-
-while counter != 5:
-    counter += 1
-    print(counter)
-    play_game()
-    if winner == 'You won! ':
-        counter = 5
-=======
             if user_word[1] not in word:
                 BoxRow.turn_dark_gray(r2b2)
             if user_word[2] not in word:
@@ -624,7 +435,6 @@ while playing:
                 play_game()
                 if user_word == word:
                     counter = 5
->>>>>>> lydia-branch
 
 pygame.display.update()
 
