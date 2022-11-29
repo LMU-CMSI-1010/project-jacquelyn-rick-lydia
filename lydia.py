@@ -128,6 +128,7 @@ class BoxRow():
 
     def turn_green(box):
         pygame.draw.rect(screen, green, box, 0)
+        print('turn green function is running')
         pygame.display.update()
 
     def turn_yellow(box):
@@ -176,11 +177,7 @@ def play_game():
                 BoxRow.turn_green(r1b5)
             if user_word == word:
                 print('You won! ')
-                BoxRow.turn_green(r1b1)
-                BoxRow.turn_green(r1b2)
-                BoxRow.turn_green(r1b3)
-                BoxRow.turn_green(r1b4)
-                BoxRow.turn_green(r1b5)
+                
 
 
 # correct letter but wrong place
@@ -226,11 +223,7 @@ def play_game():
                 BoxRow.turn_green(r2b5)
             if user_word == word:
                 print('You won! ')
-                BoxRow.turn_green(r2b1)
-                BoxRow.turn_green(r2b2)
-                BoxRow.turn_green(r2b3)
-                BoxRow.turn_green(r2b4)
-                BoxRow.turn_green(r2b5)
+
  
 
 # correct letter but wrong place
@@ -278,11 +271,7 @@ def play_game():
                 BoxRow.turn_green(r3b5)
             if user_word == word:
                 print('You won! ')
-                BoxRow.turn_green(r3b1)
-                BoxRow.turn_green(r3b2)
-                BoxRow.turn_green(r3b3)
-                BoxRow.turn_green(r3b4)
-                BoxRow.turn_green(r3b5)
+
         
 
 # correct letter but wrong place
@@ -330,11 +319,7 @@ def play_game():
                 BoxRow.turn_green(r4b5)
             if user_word == word:
                 print('You won! ')
-                BoxRow.turn_green(r4b1)
-                BoxRow.turn_green(r4b2)
-                BoxRow.turn_green(r4b3)
-                BoxRow.turn_green(r4b4)
-                BoxRow.turn_green(r4b5)
+
 
 
 # correct letter but wrong place
@@ -382,11 +367,6 @@ def play_game():
                 BoxRow.turn_green(r5b5)
             if user_word == word:
                 print('You won! ')
-                BoxRow.turn_green(r5b1)
-                BoxRow.turn_green(r5b2)
-                BoxRow.turn_green(r5b3)
-                BoxRow.turn_green(r5b4)
-                BoxRow.turn_green(r5b5)
 
 
 # correct letter but wrong place
