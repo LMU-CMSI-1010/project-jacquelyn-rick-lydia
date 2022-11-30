@@ -148,6 +148,7 @@ BoxRow.fifthrow()
 
 
 counter = 0
+    
 
 print(word)
 
@@ -208,6 +209,7 @@ def play_game():
                 BoxRow.turn_dark_gray(r1b5)
 
             pygame.display.update()
+
 
         
         elif counter == 2:
@@ -408,6 +410,7 @@ while playing:
             while counter != 5:
                 if event.type == pygame.QUIT:
                     playing = False
+                    pygame.quit
                 counter += 1
                 print(counter)
                 play_game()
@@ -417,3 +420,5 @@ while playing:
 pygame.display.update()
 
 # quits the game if the user gets the word right and prints you won message
+
+
