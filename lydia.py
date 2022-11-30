@@ -133,11 +133,12 @@ class BoxRow():
 
     def turn_yellow(box):
         pygame.draw.rect(screen, yellow, box, 0)
+        print('turn yellow function is running')
         pygame.display.update()
 
     def turn_dark_gray(box):
         pygame.draw.rect(screen, dark_gray, box, 0)
-        print('turn gray function is running')
+        print('turn dark gray function is running')
         pygame.display.update()
 
 BoxRow.firstrow()
@@ -208,7 +209,6 @@ def play_game():
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r1b5)
 
-            pygame.display.update()
 
 
         
@@ -258,7 +258,7 @@ def play_game():
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r2b5)
 
-            pygame.display.update()
+
 
         elif counter == 3:
 
@@ -306,7 +306,7 @@ def play_game():
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r3b5)
 
-            pygame.display.update()
+
 
         elif counter == 4:
 
@@ -354,7 +354,7 @@ def play_game():
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r4b5)
 
-            pygame.display.update()
+
 
         elif counter == 5:
 
@@ -401,8 +401,6 @@ def play_game():
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r5b5)
 
-            pygame.display.update()
-
 
 playing = True
 while playing:
@@ -410,7 +408,7 @@ while playing:
             while counter != 5:
                 if event.type == pygame.QUIT:
                     playing = False
-                    pygame.quit
+                    pygame.quit()
                 counter += 1
                 print(counter)
                 play_game()
