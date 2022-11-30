@@ -1,3 +1,5 @@
+import pygame
+
 class Keyboard:
    def __init__(self):
        self.keys = []
@@ -25,3 +27,6 @@ class Key:
        font = pygame.font.SysFont("arial", 16)
        text = font.render(text, True, self.color)
        surface.blit(text, (0,0))
+
+Key.draw()
+pygame.display.update()
