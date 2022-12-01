@@ -137,6 +137,7 @@ class BoxRow():
 
     def turn_dark_gray(box):
         pygame.draw.rect(screen, dark_gray, box, 0)
+        print('turn gray function is running')
         pygame.display.update()
 
 BoxRow.firstrow()
@@ -147,6 +148,7 @@ BoxRow.fifthrow()
 
 
 counter = 0
+    
 
 print(word)
 
@@ -177,8 +179,8 @@ def play_game():
                 BoxRow.turn_green(r1b5)
             if user_word == word:
                 print('You won! ')
-                
 
+                
 
 # correct letter but wrong place
 
@@ -205,6 +207,9 @@ def play_game():
                 BoxRow.turn_dark_gray(r1b4)
             if user_word[4] not in word:
                 BoxRow.turn_dark_gray(r1b5)
+
+            pygame.display.update()
+
 
         
         elif counter == 2:
@@ -402,9 +407,10 @@ def play_game():
 playing = True
 while playing:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                playing = False
             while counter != 5:
+                if event.type == pygame.QUIT:
+                    playing = False
+                    pygame.quit
                 counter += 1
                 print(counter)
                 play_game()
@@ -414,3 +420,5 @@ while playing:
 pygame.display.update()
 
 # quits the game if the user gets the word right and prints you won message
+
+
