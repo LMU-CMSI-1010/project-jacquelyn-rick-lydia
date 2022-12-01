@@ -206,18 +206,364 @@ while True:
                         if user_word[0] != word[0] and user_word[0] in word:
                             BoxRow.turn_yellow(r1b1)
                             r1b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r1b1, r1b1_t)
                         if user_word[1] != word[1] and user_word[1] in word:
                             BoxRow.turn_yellow(r1b2)
                             r1b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r1b2, r1b2_t)
                         if user_word[2] != word[2] and user_word[2] in word:
                             BoxRow.turn_yellow(r1b3)
                             r1b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r1b3, r1b3_t)
                         if user_word[3] != word[3] and user_word[3] in word:
                             BoxRow.turn_yellow(r1b4)
                             r1b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r1b4, r1b4_t)
                         if user_word[4] != word[4] and user_word[4] in word:
                             BoxRow.turn_yellow(r1b5)
                             r1b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r1b5, r1b5_t)
+
+                        # incorrect letter
+
+                        if user_word[0] not in word:
+                            BoxRow.turn_dark_gray(r1b1)
+                            r1b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r1b1, r1b1_t)
+                        if user_word[1] not in word:
+                            BoxRow.turn_dark_gray(r1b2)
+                            r1b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r1b2, r1b2_t)
+                        if user_word[2] not in word:
+                            BoxRow.turn_dark_gray(r1b3)
+                            r1b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r1b3, r1b3_t)
+                        if user_word[3] not in word:
+                            BoxRow.turn_dark_gray(r1b4)
+                            r1b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r1b4, r1b4_t)
+                        if user_word[4] not in word:
+                            BoxRow.turn_dark_gray(r1b5)
+                            r1b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r1b5, r1b5_t)
+
+                    elif counter == 2:
+
+                        # correct letter and placement
+
+                        if user_word[0] == word[0]:
+                            BoxRow.turn_green(r2b1)
+                            r2b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r2b1, r2b1_t)
+                        if user_word[1] == word[1]:
+                            BoxRow.turn_green(r2b2)
+                            r2b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r2b2, r2b2_t)
+                        if user_word[2] == word[2]:
+                            BoxRow.turn_green(r2b3)
+                            r2b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r2b3, r2b3_t)
+                        if user_word[3] == word[3]:
+                            BoxRow.turn_green(r2b4)
+                            r2b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r2b4, r2b4_t)
+                        if user_word[4] == word[4]:
+                            BoxRow.turn_green(r2b5)
+                            r2b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r2b5, r2b5_t)
+                        if user_word == word:
+                            print('You won! ')
+
+
+
+
+#where i left off for the render and putting the text on the box
+
+                        # correct letter but wrong place
+
+                        if user_word[0] != word[0] and user_word[0] in word:
+                            BoxRow.turn_yellow(r2b1)
+                            r2b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r2b1, r2b1_t)
+                        if user_word[1] != word[1] and user_word[1] in word:
+                            BoxRow.turn_yellow(r2b2)
+                            r2b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r2b2, r2b2_t)
+                        if user_word[2] != word[2] and user_word[2] in word:
+                            BoxRow.turn_yellow(r2b3)
+                            r2b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r2b3, r2b3_t)
+                        if user_word[3] != word[3] and user_word[3] in word:
+                            BoxRow.turn_yellow(r2b4)
+                            r2b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r2b4, r2b4_t)
+                        if user_word[4] != word[4] and user_word[4] in word:
+                            BoxRow.turn_yellow(r2b5)
+                            r2b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r2b5, r2b5_t)
+            
+
+                    # incorrect letter
+
+                        if user_word[0] not in word:
+                            BoxRow.turn_dark_gray(r2b1)
+                            r2b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r2b1, r2b1_t)
+                        if user_word[1] not in word:
+                            BoxRow.turn_dark_gray(r2b2)
+                            r2b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r2b2, r2b2_t)
+                        if user_word[2] not in word:
+                            BoxRow.turn_dark_gray(r2b3)
+                            r2b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r2b3, r2b3_t)
+                        if user_word[3] not in word:
+                            BoxRow.turn_dark_gray(r2b4)
+                            r2b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r2b4, r2b4_t)
+                        if user_word[4] not in word:
+                            BoxRow.turn_dark_gray(r2b5)
+                            r2b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r2b5, r2b5_t)
+
+                        pygame.display.update()
+
+
+
+                    elif counter == 3:
+
+                    # correct letter and placement
+
+                        if user_word[0] == word[0]:
+                            BoxRow.turn_green(r3b1)
+                            r3b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r3b1, r3b1_t)
+                        if user_word[1] == word[1]:
+                            BoxRow.turn_green(r3b2)
+                            r3b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r3b2, r3b2_t)
+                        if user_word[2] == word[2]:
+                            BoxRow.turn_green(r3b3)
+                            r3b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r3b3, r3b3_t)
+                        if user_word[3] == word[3]:
+                            BoxRow.turn_green(r3b4)
+                            r3b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r3b4, r3b4_t)
+                        if user_word[4] == word[4]:
+                            BoxRow.turn_green(r3b5)
+                            r3b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r3b5, r3b5_t)
+                        if user_word == word:
+                            print('You won! ')
+
+        
+
+                    # correct letter but wrong place
+
+                        if user_word[0] != word[0] and user_word[0] in word:
+                            BoxRow.turn_yellow(r3b1)
+                            r3b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r3b1, r3b1_t)
+                        if user_word[1] != word[1] and user_word[1] in word:
+                            BoxRow.turn_yellow(r3b2)
+                            r3b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r3b2, r3b2_t)
+                        if user_word[2] != word[2] and user_word[2] in word:
+                            BoxRow.turn_yellow(r3b3)
+                            r3b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r3b3, r3b3_t)
+                        if user_word[3] != word[3] and user_word[3] in word:
+                            BoxRow.turn_yellow(r3b4)
+                            r3b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r3b4, r3b4_t)
+                        if user_word[4] != word[4] and user_word[4] in word:
+                            BoxRow.turn_yellow(r3b5)
+                            r3b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r3b5, r3b5_t)
+            
+
+                    # incorrect letter
+
+                        if user_word[0] not in word:
+                            BoxRow.turn_dark_gray(r3b1)
+                            r3b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r3b1, r3b1_t)
+                        if user_word[1] not in word:
+                            BoxRow.turn_dark_gray(r3b2)
+                            r3b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r3b2, r3b2_t)
+                        if user_word[2] not in word:
+                            BoxRow.turn_dark_gray(r3b3)
+                            r3b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r3b3, r3b3_t)
+                        if user_word[3] not in word:
+                            BoxRow.turn_dark_gray(r3b4)
+                            r3b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r3b4, r3b4_t)
+                        if user_word[4] not in word:
+                            BoxRow.turn_dark_gray(r3b5)
+                            r3b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r3b5, r3b5_t)
+
+                        pygame.display.update()
+
+                    elif counter == 4:
+
+                    # correct letter and placement
+
+                        if user_word[0] == word[0]:
+                            BoxRow.turn_green(r4b1)
+                            r4b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r4b1, r4b1_t)
+                        if user_word[1] == word[1]:
+                            BoxRow.turn_green(r4b2)
+                            r4b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r4b2, r4b2_t)
+                        if user_word[2] == word[2]:
+                            BoxRow.turn_green(r4b3)
+                            r4b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r4b3, r4b3_t)
+                        if user_word[3] == word[3]:
+                            BoxRow.turn_green(r4b4)
+                            r4b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r4b4, r4b4_t)
+                        if user_word[4] == word[4]:
+                            BoxRow.turn_green(r4b5)
+                            r4b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r4b5, r4b5_t)
+                        if user_word == word:
+                            print('You won! ')
+
+
+
+                    # correct letter but wrong place
+
+                        if user_word[0] != word[0] and user_word[0] in word:
+                            BoxRow.turn_yellow(r4b1)
+                            r4b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r4b1, r4b1_t)
+                        if user_word[1] != word[1] and user_word[1] in word:
+                            BoxRow.turn_yellow(r4b2)
+                            r4b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r4b2, r4b2_t)
+                        if user_word[2] != word[2] and user_word[2] in word:
+                            BoxRow.turn_yellow(r4b3)
+                            r4b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r4b3, r4b3_t)
+                        if user_word[3] != word[3] and user_word[3] in word:
+                            BoxRow.turn_yellow(r4b4)
+                            r4b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r4b4, r4b4_t)
+                        if user_word[4] != word[4] and user_word[4] in word:
+                            BoxRow.turn_yellow(r4b5)
+                            r4b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r4b5, r4b5_t)
+            
+
+                    # incorrect letter
+
+                        if user_word[0] not in word:
+                            BoxRow.turn_dark_gray(r4b1)
+                            r4b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r4b1, r4b1_t)
+                        if user_word[1] not in word:
+                            BoxRow.turn_dark_gray(r4b2)
+                            r4b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r4b2, r4b2_t)
+                        if user_word[2] not in word:
+                            BoxRow.turn_dark_gray(r4b3)
+                            r4b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r4b3, r4b3_t)
+                        if user_word[3] not in word:
+                            BoxRow.turn_dark_gray(r4b4)
+                            r4b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r4b4, r4b4_t)
+                        if user_word[4] not in word:
+                            BoxRow.turn_dark_gray(r4b5)
+                            r4b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r4b5, r4b5_t)
+
+                        pygame.display.update()
+
+                    elif counter == 5:
+
+                    # correct letter and placement
+
+                        if user_word[0] == word[0]:
+                            BoxRow.turn_green(r5b1)
+                            r5b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r5b1, r5b1_t)
+                        if user_word[1] == word[1]:
+                            BoxRow.turn_green(r5b2)
+                            r5b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r5b2, r5b2_t)
+                        if user_word[2] == word[2]:
+                            BoxRow.turn_green(r5b3)
+                            r5b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r5b3, r5b3_t)
+                        if user_word[3] == word[3]:
+                            BoxRow.turn_green(r5b4)
+                            r5b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r5b4, r5b4_t)
+                        if user_word[4] == word[4]:
+                            BoxRow.turn_green(r5b5)
+                            r5b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r5b5, r5b5_t)
+                        if user_word == word:
+                            print('You won! ')
+
+
+                    # correct letter but wrong place
+
+                        if user_word[0] != word[0] and user_word[0] in word:
+                            BoxRow.turn_yellow(r5b1)
+                            r5b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r5b1, r5b1_t)
+                        if user_word[1] != word[1] and user_word[1] in word:
+                            BoxRow.turn_yellow(r5b2)
+                            r5b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r5b2, r5b2_t)
+                        if user_word[2] != word[2] and user_word[2] in word:
+                            BoxRow.turn_yellow(r5b3)
+                            r5b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r5b3, r5b3_t)
+                        if user_word[3] != word[3] and user_word[3] in word:
+                            BoxRow.turn_yellow(r5b4)
+                            r5b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r5b4, r5b4_t)
+                        if user_word[4] != word[4] and user_word[4] in word:
+                            BoxRow.turn_yellow(r5b5)
+                            r5b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r5b5, r5b5_t)
+
+
+                    # incorrect letter
+
+                        if user_word[0] not in word:
+                            BoxRow.turn_dark_gray(r5b1)
+                            r5b1_t = font.render(user_word[0], True, black)
+                            screen.blit(r5b1, r5b1_t)
+                        if user_word[1] not in word:
+                            BoxRow.turn_dark_gray(r5b2)
+                            r5b2_t = font.render(user_word[1], True, black)
+                            screen.blit(r5b2, r5b2_t)
+                        if user_word[2] not in word:
+                            BoxRow.turn_dark_gray(r5b3)
+                            r5b3_t = font.render(user_word[2], True, black)
+                            screen.blit(r5b3, r5b3_t)
+                        if user_word[3] not in word:
+                            BoxRow.turn_dark_gray(r5b4)
+                            r5b4_t = font.render(user_word[3], True, black)
+                            screen.blit(r5b4, r5b4_t)
+                        if user_word[4] not in word:
+                            BoxRow.turn_dark_gray(r5b5)
+                            r5b5_t = font.render(user_word[4], True, black)
+                            screen.blit(r5b5, r5b5_t)
+
+                        pygame.display.update()
+
+
 
 
 
