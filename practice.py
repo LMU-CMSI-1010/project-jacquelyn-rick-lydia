@@ -1,4 +1,5 @@
 import pygame
+import time
 
 pygame.init()
 
@@ -10,6 +11,7 @@ black = (0, 0, 0)
 light_gray = (200, 200, 200)
 yellow = (255, 235, 0)
 dark_gray = (135, 135, 135)
+
 
 
 screen_width = 500
@@ -242,6 +244,7 @@ def play_game(game):
         letter5 = font.render(user_word[4], True, black, None)
         letter_rect5 = letter5.get_rect(center = (screen_width / 1.25 , screen_height / 4 + (counter - 1) * 73))
         screen.blit(letter5, letter_rect5)
+
         
         pygame.display.update()
 
@@ -249,8 +252,8 @@ def play_game(game):
 
 
 counter = 0     
-if counter < 5:
-    playing = True
+
+playing = True
 game = BoxRow()
 while playing:
     counter += 1
@@ -260,11 +263,13 @@ while playing:
             pygame.quit()
     print(counter)
     play_game(game)
+    pygame.time.delay(20)
 
     if user_word == word:
         counter = 5
 
     if counter == 5:
         print('game over')
+        pygame.time.delay(20)
         playing = False
         pygame.quit()
