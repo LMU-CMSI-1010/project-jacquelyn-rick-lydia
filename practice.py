@@ -160,9 +160,10 @@ print(word)
 
 user_word = ''
 
-def play_game(game, counter):
+def play_game(game):
     user_word = input('what is your guess? ')
     if user_word == 'q':
+        pygame.quit()
         return False
     elif len(user_word) != 5 or type(user_word) != str:
         print('guess must be a five letter word')
@@ -172,40 +173,55 @@ def play_game(game, counter):
 
         if user_word[0] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[1] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[2] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[3] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[4] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
 
 # correct letter incorrect placement
 
         if user_word[0] != word[0] and user_word[0] in word:
            game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+           pygame.display.update()
         if user_word[1] != word[1] and user_word[1] in word:
             game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[2] != word[2] and user_word[2] in word:
             game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[3] != word[3] and user_word[3] in word:
             game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[4] != word[4] and user_word[4] in word:
             game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
 
 # correct letter and placement
 
         if user_word[0] == word[0]:
            game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+           pygame.display.update()
         if user_word[1] == word[1]:
             game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[2] == word[2]:
             game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[3] == word[3]:
             game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
         if user_word[4] == word[4]:
             game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
+            pygame.display.update()
 
 
         letter1 = font.render(user_word[0], True, black, None)
@@ -236,23 +252,23 @@ def play_game(game, counter):
         
 playing = True
 game = BoxRow()
-counter = 0
+counter = 1
 while playing:
-    counter += 1
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            playing = False
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                playing = False
+                pygame.quit()
+        print(counter)
+        play_game(game)
+        counter += 1
+
+        if counter == 5:
+            print('game over')
             pygame.quit()
 
-    print(counter)
-    result = play_game(game, counter)
 
-    if not result or counter == 5:
-        print('game over')
-        playing = False
-
-
-    if user_word == word:
-        counter = 5
+        if user_word == word:
+            counter = 5
 
 pygame.quit()
