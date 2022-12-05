@@ -163,7 +163,6 @@ user_word = ''
 def play_game(game):
     user_word = input('what is your guess? ')
     if user_word == 'q':
-        pygame.quit()
         return False
     elif len(user_word) != 5 or type(user_word) != str:
         print('guess must be a five letter word')
@@ -249,26 +248,23 @@ def play_game(game):
     return True
 
 
-        
-playing = True
+counter = 0     
+if counter < 5:
+    playing = True
 game = BoxRow()
-counter = 1
 while playing:
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                playing = False
-                pygame.quit()
-        print(counter)
-        play_game(game)
-        counter += 1
-
-        if counter == 5:
-            print('game over')
+    counter += 1
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            playing = False
             pygame.quit()
+    print(counter)
+    play_game(game)
 
+    if user_word == word:
+        counter = 5
 
-        if user_word == word:
-            counter = 5
-
-pygame.quit()
+    if counter == 5:
+        print('game over')
+        playing = False
+        pygame.quit()
