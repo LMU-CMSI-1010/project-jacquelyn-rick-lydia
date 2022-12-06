@@ -324,10 +324,9 @@ while playing:
         print(counter)
         playing = play_game(game)
 
-    if counter == 6:
+    if counter == 6 and user_word != word:
             print('game over')
             game.out_of_tries()
             print(word)
             pygame.quit()
             playing = False
-
