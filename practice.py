@@ -270,27 +270,27 @@ def play_game(game):
 
 
         letter1 = font.render(user_word[0], True, black, None)
-        letter_rect1 = letter1.get_rect(center = (screen_width / 4.77 , screen_height / 3.95 + (counter - 1) * 72))
+        letter_rect1 = letter1.get_rect(center = (screen_width / 4.77 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter1, letter_rect1)
         pygame.display.update()
 
         letter2 = font.render(user_word[1], True, black, None)
-        letter_rect2 = letter2.get_rect(center = (screen_width / 2.9 , screen_height / 3.95 + (counter - 1) * 72))
+        letter_rect2 = letter2.get_rect(center = (screen_width / 2.9 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter2, letter_rect2)
         pygame.display.update()
 
         letter3 = font.render(user_word[2], True, black, None)
-        letter_rect3 = letter3.get_rect(center = (screen_width / 2 , screen_height / 3.95 + (counter - 1) * 72))
+        letter_rect3 = letter3.get_rect(center = (screen_width / 2 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter3, letter_rect3)
         pygame.display.update()
 
         letter4 = font.render(user_word[3], True, black, None)
-        letter_rect4 = letter4.get_rect(center = (screen_width / 1.53 , screen_height / 3.95 + (counter - 1) * 72))
+        letter_rect4 = letter4.get_rect(center = (screen_width / 1.53 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter4, letter_rect4)
         pygame.display.update()
 
         letter5 = font.render(user_word[4], True, black, None)
-        letter_rect5 = letter5.get_rect(center = (screen_width / 1.25 , screen_height / 3.95 + (counter - 1) * 72))
+        letter_rect5 = letter5.get_rect(center = (screen_width / 1.25 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter5, letter_rect5)
         pygame.display.update()
 
