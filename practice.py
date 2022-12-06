@@ -1,8 +1,8 @@
 import pygame
 
 # initializing the game
-
 pygame.init()
+pygame.event.get()
 
 green = (0, 200, 0)
 blue = (0, 0, 200)
@@ -314,7 +314,11 @@ counter = 0
 playing = True
 game = BoxRow()
 while playing:
-    pygame.event.get()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            playing = False
+            exit()
     counter += 1
     if counter < 7:
         print(counter)
@@ -325,4 +329,5 @@ while playing:
             game.out_of_tries()
             print(word)
             pygame.quit()
+            playing = False
 
