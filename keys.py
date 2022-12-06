@@ -17,7 +17,7 @@ black = (0, 0, 0)
 screen = pygame.display.set_mode((screen_width, screen_height))
 screen.fill(white)
 
-font = pygame.font.SysFont('arial', 26)
+font = pygame.font.SysFont('freesansbold', 35)
 
 
 class Keyboard:
@@ -119,7 +119,7 @@ N = Key('N', white)
 N.draw((screen_width / 8 + (screen_width / 15) * 7 - (box_width / 2)) + 30, bottom_line_height)
 M = Key('M', white)
 M.draw((screen_width / 8 + (screen_width / 15) * 8 - (box_width / 2)) + 30, bottom_line_height)
-Backspace = Key('<--', white)
+Backspace = Key('<---', white)
 Backspace.draw((screen_width / 8 + (screen_width / 15) * 9 - (box_width / 2)) + 30, bottom_line_height, True)
 
 pygame.display.update()
