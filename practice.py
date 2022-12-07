@@ -217,18 +217,23 @@ def play_game(game):
         if user_word[0] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[1] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[2] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[3] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[4] not in word:
             game.turn_dark_gray(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         
 
 # correct letter incorrect placement
@@ -236,18 +241,23 @@ def play_game(game):
         if user_word[0] != word[0] and user_word[0] in word:
            game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
            pygame.display.update()
+           pygame.time.delay(10)
         if user_word[1] != word[1] and user_word[1] in word:
             game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[2] != word[2] and user_word[2] in word:
             game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[3] != word[3] and user_word[3] in word:
             game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[4] != word[4] and user_word[4] in word:
             game.turn_yellow(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
 
 
 # correct letter and placement
@@ -255,44 +265,54 @@ def play_game(game):
         if user_word[0] == word[0]:
            game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
            pygame.display.update()
+           pygame.time.delay(10)
         if user_word[1] == word[1]:
             game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)) - box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[2] == word[2]:
             game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)), (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[3] == word[3]:
             game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 1.5, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
         if user_word[4] == word[4]:
             game.turn_green(pygame.Rect((screen_width * 0.5 - (box_width / 2)) + box_width * 3, (screen_height * 0.2) + ((counter - 1) * 75), box_width, box_height))
             pygame.display.update()
+            pygame.time.delay(10)
 
 
         letter1 = font.render(user_word[0], True, black, None)
         letter_rect1 = letter1.get_rect(center = (screen_width / 4.77 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter1, letter_rect1)
         pygame.display.update()
+        pygame.time.delay(10)
 
         letter2 = font.render(user_word[1], True, black, None)
         letter_rect2 = letter2.get_rect(center = (screen_width / 2.9 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter2, letter_rect2)
         pygame.display.update()
+        pygame.time.delay(10)
 
         letter3 = font.render(user_word[2], True, black, None)
         letter_rect3 = letter3.get_rect(center = (screen_width / 2 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter3, letter_rect3)
         pygame.display.update()
+        pygame.time.delay(10)
 
         letter4 = font.render(user_word[3], True, black, None)
         letter_rect4 = letter4.get_rect(center = (screen_width / 1.53 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter4, letter_rect4)
         pygame.display.update()
+        pygame.time.delay(10)
 
         letter5 = font.render(user_word[4], True, black, None)
         letter_rect5 = letter5.get_rect(center = (screen_width / 1.25 , screen_height / 3.8 + (counter - 1) * 72))
         screen.blit(letter5, letter_rect5)
         pygame.display.update()
+        pygame.time.delay(10)
 
 
         if user_word == word:
@@ -330,3 +350,6 @@ while playing:
             print(word)
             pygame.quit()
             playing = False
+
+pygame.quit()
+exit()
