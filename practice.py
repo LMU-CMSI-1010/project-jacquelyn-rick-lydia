@@ -218,7 +218,6 @@ print(word)
 
 # Loop that keeps the game open until the user quits
 
-user_word = ''
 
 def play_game(game):
     user_word = input('what is your guess? ')
@@ -358,7 +357,8 @@ while playing:
     
     if counter == 6:
         playing = False
-        game.out_of_tries()
+        #print(user_word)
+        #game.out_of_tries()
 
         pygame.quit()
         exit()
