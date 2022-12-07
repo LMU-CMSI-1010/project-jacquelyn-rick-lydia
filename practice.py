@@ -166,8 +166,8 @@ class BoxRow():
         pygame.display.update()
 
 
-    def quit_game(self):
-        pygame.time.delay(3000)
+    def congrats_message(self):
+        pygame.time.delay(1500)
         cong_screen = pygame.Rect(screen_width / 16, screen_height / 4, screen_width * 0.9, screen_height * 0.16)
         pygame.draw.rect(screen, white, cong_screen, 0)
         pygame.draw.rect(screen, red, cong_screen, 4)
@@ -180,7 +180,7 @@ class BoxRow():
         screen.blit(congrats, cong_rect)
         print('congrats')
         pygame.display.update()
-        pygame.time.delay(2000)
+        pygame.time.delay(4000)
         pygame.quit()
 
     def out_of_tries(self):
@@ -197,9 +197,24 @@ class BoxRow():
         pygame.time.delay(2000)
         pygame.quit()
 
+    def give_up(self):
+        print('give up?')
+        pygame.time.delay(500)
+        cong_screen = pygame.Rect(screen_width / 16, screen_height / 4, screen_width * 0.9, screen_height * 0.16)
+        pygame.draw.rect(screen, white, cong_screen, 0)
+        pygame.draw.rect(screen, red, cong_screen, 4)
+        cong_font = pygame.font.SysFont('timesnewroman', 25)
+        give_up = cong_font.render('Good try. The correct word was: "' + word + '".', True, black, None)
+        cong_rect = give_up.get_rect(center = (screen_width / 2, screen_height / 3))
+        screen.blit(give_up, cong_rect)
+        pygame.display.update()
+        pygame.time.delay(2000)
+        pygame.quit()
+        exit()
 
 
-# print(word)
+
+print(word)
 
 # Loop that keeps the game open until the user quits
 
@@ -314,11 +329,9 @@ def play_game(game):
         pygame.display.update()
         pygame.time.delay(10)
 
-
         if user_word == word:
-                game.quit_game()
-                return False
-                 
+            game.congrats_message()
+            return False    
 
         return True
 
@@ -336,20 +349,16 @@ game = BoxRow()
 while playing:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            playing = False
-            exit()
+            game.give_up()
+
     counter += 1
     if counter < 7:
         print(counter)
         playing = play_game(game)
+    
+    if counter == 6:
+        playing = False
+        game.out_of_tries()
 
-    if counter == 6 and user_word != word:
-            print('game over')
-            game.out_of_tries()
-            print(word)
-            pygame.quit()
-            playing = False
-
-pygame.quit()
-exit()
+        pygame.quit()
+        exit()
