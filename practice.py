@@ -1,8 +1,12 @@
 import pygame
+import sys
 
 # initializing the game
 pygame.init()
 pygame.event.get()
+
+
+clock = pygame.time.Clock()
 
 green = (0, 200, 0)
 blue = (0, 0, 200)
@@ -210,7 +214,7 @@ class BoxRow():
         pygame.display.update()
         pygame.time.delay(2000)
         pygame.quit()
-        exit()
+        sys.exit()
 
 
 
@@ -219,11 +223,20 @@ print(word)
 # Loop that keeps the game open until the user quits
 
 
+
+
+
 def play_game(game):
+
     user_word = input('what is your guess? ')
+
     if len(user_word) != 5:
-        print('guess must be a five letter word')
-        return True
+        if user_word == 'q' or user_word == 'Q':
+            game.give_up()
+        else:
+            print('guess must be a five letter word')
+            wrong_word = "wrong word"
+            return wrong_word
     else:
 
 # incorrect letter
@@ -341,24 +354,23 @@ pygame.display.update()
 
 
 
-counter = 0     
-
+counter = 1
 playing = True
 game = BoxRow()
 while playing:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            game.give_up()
 
-    counter += 1
-    if counter < 7:
+    if counter < 8:
         print(counter)
         playing = play_game(game)
+        if playing == "wrong word":
+            counter = counter
+        else:
+            counter += 1
     
     if counter == 6:
-        playing = False
-        #print(user_word)
-        #game.out_of_tries()
+        if playing == True:
+            game.out_of_tries()
 
         pygame.quit()
         exit()
+
