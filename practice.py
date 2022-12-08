@@ -367,7 +367,7 @@ while playing:
         else:
             counter += 1
     
-    if counter == 6:
+    if counter == 7:
         if playing == True:
             game.out_of_tries()
 
