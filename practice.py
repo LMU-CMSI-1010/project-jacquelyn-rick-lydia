@@ -218,7 +218,7 @@ class BoxRow():
 
 
 
-print(word)
+
 
 # Loop that keeps the game open until the user quits
 
