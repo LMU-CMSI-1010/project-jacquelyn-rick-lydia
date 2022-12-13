@@ -1,38 +1,30 @@
 # WORDLE  
 
-Wordle is a word guessing game. It gives players six chances to guess a randomly selected five-letter word. As shown above, if you have the right letter in the right spot, it shows up green. A correct letter in the wrong spot shows up yellow. A letter that isn't in the word in any spot shows up gray. 
+Wordle is a word guessing game. It gives players six chances to guess a randomly selected five-letter word. The player's guess is reflected onto the pygame screen. As shown above, if you have the right letter in the right spot, it turns green. A correct letter in the wrong spot turns yellow. A letter that isn't in the word in any spot turns gray.
 
-- Each guess must be a valid 5-letter word.
-- The color of the tiles will change to show how close your guess was to the word.
+## PlAYING THE GAME 
 
-In the following game of Wordle, the first guess was X, the second was X, third guess X, fourth guess is X, and then last guess is X.
+- Install the necessary libraries
+    - Make sure to install 'pygame,' 'sys,' and 'english_words'
+- To play the game, you will be prompted with the terminal asking for your guess. For this input, type in the terminal a five letter word to guess the randomly selected five-letter word. 
+- If you put in a word that contains numbers or symbols, the terminal will tell you that you need to put in a five-letter word.
+- If you want to quit the game without finishing all your tries, type in 'q' for your guess. Once you do this, the game will tell you what the word was and then quit the game.
+- Once you run out of tries without getting the word correct, the pygame screen will tell you you are out of tries and then tell you what the correct word was.
+- If you get the word correct within your six tries, the pygame will display a congratulatory message and say how many tries it took you to get the word right.
 
-# EXAMPLE 
+Rules:
 
-Screen Shot 2022-12-12 at 7.40.57 PM.png
+- Each guess must be a valid five-letter word.
+- Each guess must only contain letters and not numbers or symbols.
 
-
-## RUNNING THE GAME 
-
-1. Install the pygame library: `pip install pygame`
-2. Run the game: `python wordle.py`
 
 ## FEATURES 
 
 - Six rows of five-letter words
 - Color-coded boxes to indicate correct and incorrect guesses
-- Timer to track how long it takes to find all the words
 
 ## KNOWN LIMITATION 
 
 - Only includes five-letter words from the English language
-- Does not allow for user input or customization
 
-## CONTRIBUTING 
-
-If you encounter any bugs or have suggestions for new features, please submit an issue or pull request on the project's GitHub page.
-
-
-## DEMO
-
- 
+Note: This game runs best on a Mac computer; we have seen issues with the pygame screen not updating correctly when it is played on Windows.
