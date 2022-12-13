@@ -1,3 +1,7 @@
+# Wordle Game
+
+# Lydia, Jacquelyn, Rick
+
 import pygame
 import sys
 
